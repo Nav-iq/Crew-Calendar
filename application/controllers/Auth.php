@@ -8,6 +8,12 @@
             $this->load->view('frontend');
             
 
+        }
+        public function calendar()
+        {
+        
+            $this->load->view('calendar');
+            
 
         }
         
