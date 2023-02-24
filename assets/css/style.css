@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    outline: 0;
+    text-align: center;
+    
+    
+}
+body
+{
+    margin: 0 20px;
+
+}
+
+html {
+    font-size: 80%;
+}
+
+
+
+.heading {
+    overflow: hidden;
+    font-size: 25px;
+}
+
+.heading h1 {
+    color: #978313;
+    font-size: 35px;
+}
+
+.heading img {
+    width: 100%;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60%;
+}
+
+/* .container {
+
+} */
+
+.container .crew-form {
+    padding-top: 3rem;
+    background: #0e3b0c;
+}
+
+.container .crew-form .flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.container .crew-form .flex .flex-child {
+    flex: 1 1 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-child label {
+    font-size: 15px;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.flex-child .input-box {
+    flex: 1 1 60px;
+}
+
+.flex-child .input-box input {
+    width: 200px;
+    font-size: 1.2rem;
+}
+
+.flex-child .input-box select {
+    padding: 0.2rem 0.2rem;
+    border: 1px solid #111111;
+    width: 200px;
+    font-size: 1.2rem;
+} 
+
+.flex-child button {
+    font-size: 15px;
+    padding: 0.1rem 0.1rem;
+    align-self: center;
+    width: 100px;
+    border: 1px solid #111111;
+    border-radius: 15px;
+}
+
+.flex-child button:hover {
+    background: #978313;
+    color: #ffffff;
+    border: none;
+}
+@media(max-width : 600px) {
+    .heading img {
+        height: 40%;
+    }
+    
+}
+@media(max-width : 400px) {
+    .heading img {
+        height: 35%;
+    }
+    
+}
+@media(max-width : 200px) {
+    .heading img {
+        height: 25%;
+    }
+    
+}
