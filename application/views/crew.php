@@ -385,7 +385,7 @@
             }).get(); // Find the corresponding table row data using the event title
 
             // Create the tooltip
-            var tooltip = $('<div class="event-tooltip"><span>Title: ' + rowData[2] + '</span><span>Base: ' + rowData[3] + '</span><span>Start: ' + rowData[0] + '</span></div>');
+            var tooltip = $('<div class="event-tooltip"><span>Title: ' + rowData[2] + '</span><span>Base: ' + rowData[3] + '</span><span>Date: ' + rowData[0] + '</span></div>');
             $('body').append(tooltip);
         });
 
