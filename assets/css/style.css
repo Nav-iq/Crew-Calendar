@@ -103,6 +103,25 @@ html::-webkit-scrollbar-track {
 	border: none;
 }
 
+/************************ get table button ******************************/
+
+.get-table {
+	border: 3px solid #222d32;
+}
+
+.get-table:hover {
+	background: #337ab7;
+	color: #fff; 
+	border: 1px solid #fff;
+}
+
+.btn.btn-default.buttons-excel.buttons-html5.get-table {
+	border-radius: 6px;
+}
+
+.btn.btn-default.buttons-collection.buttons-page-length.get-table  {
+	border-radius: 6px;
+}
 /************************** crew.php ********************************/
 
 .crew {

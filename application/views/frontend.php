@@ -12,7 +12,7 @@
 </head>
 <body>
     <section class="heading">
-        <img src="<?php echo base_url()?>assets/images/bg.jpg" alt="">
+        <!-- <img src="<?php echo base_url()?>assets/images/bg.jpg" alt=""> -->
         <h1>Crew Management</h1>
     </section>
 

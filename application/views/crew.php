@@ -28,13 +28,15 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>/assets/DataTables/DateTime-1.3.1/css/dataTables.dateTime.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>/assets/DataTables/Buttons-2.3.5/css/buttons.bootstrap.css">
 
+    <!-- download excel file -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css">
+
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
-
 
 </head>
 
@@ -119,7 +121,7 @@
                                         </label>
                                     </div>
                                     <div id="fcTrash">
-                                        <button>remove event</button>
+                                        <button class="btn btn-primary btn-flat">remove event</button>
                                     </div>
 
                                 </div>
@@ -208,6 +210,13 @@
     <script src="<?php echo base_url() ?>/assets/DataTables/DateTime-1.3.1/js/dataTables.dateTime.js"></script>
     <script src="<?php echo base_url() ?>/assets/DataTables/Buttons-2.3.5/js/buttons.bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    
+    <!-- for downloading excel file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
 
     <!-- Page specific script -->
     <script>
@@ -356,9 +365,7 @@
                 $('#new-event').val('')
             })
         })
-    </script>
-    <script>
-        //it will add the row as event if click on it 
+                //it will add the row as event if click on it 
         $(document).ready(function() {
             $('#myTable tbody tr').click(function() {
                 var rowData = $(this).children('td').map(function() {
@@ -374,9 +381,6 @@
                 console.log(eventData); // You can do whatever you want with this JSON data
             });
         });
-    </script>
-
-    <script>
         //for displaying info when hover over events
         $('#calendar').on('mouseenter', '.fc-event', function() {
             var title = $(this).find('.fc-title').text(); // Get the event title
@@ -392,12 +396,19 @@
         $('#calendar').on('mouseleave', '.fc-event', function() {
             $('.event-tooltip').remove(); // Remove the tooltip when the mouse leaves the event
         });
-    </script>
 
-    <!---------------------------- search and pagination -------------------------------->
-    <script>
+    //--------------------------- search and pagination -------------------------------->
+    
         $(document).ready(function() {
-            $('#myTable').DataTable();
+            $('#myTable').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    { extend: 'pageLength', className: 'get-table' },
+                    { extend: 'excel', className: 'get-table' }
+                ],
+                "lengthMenu": [10,25,50,100,250],
+            });
+            
         });
     </script>
 
